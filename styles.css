@@ -25,6 +25,8 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     overflow-x: hidden;
+    background: linear-gradient(to bottom, #f8fafc 0%, #e0e7ff 50%, #f0f4ff 100%);
+    background-attachment: fixed;
 }
 
 .container {
@@ -89,12 +91,36 @@ body {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #9333ea 100%);
     color: white;
     padding: 80px 20px;
     min-height: 100vh;
     display: flex;
     align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 1000px;
+    height: 1000px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    animation: float 6s ease-in-out infinite;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: -50%;
+    left: -50%;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+    animation: float 8s ease-in-out infinite reverse;
 }
 
 .hero .container {
@@ -102,6 +128,8 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 50px;
     align-items: center;
+    position: relative;
+    z-index: 2;
 }
 
 .hero-text h1 {
@@ -225,7 +253,8 @@ section {
 
 /* Tentang Section */
 .tentang {
-    background: var(--light-bg);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 244, 255, 0.95) 100%);
+    backdrop-filter: blur(10px);
 }
 
 .tentang-content {
@@ -298,7 +327,7 @@ section {
 
 /* Skills Section */
 .keahlian {
-    background: white;
+    background: linear-gradient(180deg, white 0%, rgba(248, 250, 252, 0.8) 100%);
 }
 
 .skills-grid {
@@ -352,7 +381,7 @@ section {
 
 /* Portfolio Section */
 .portofolio {
-    background: var(--light-bg);
+    background: linear-gradient(180deg, rgba(248, 250, 252, 0.8) 0%, rgba(224, 231, 255, 0.6) 100%);
 }
 
 .portfolio-filters {
@@ -445,7 +474,7 @@ section {
 
 /* Pengalaman Section */
 .pengalaman {
-    background: white;
+    background: linear-gradient(180deg, white 0%, rgba(248, 250, 252, 0.9) 100%);
 }
 
 .timeline {
@@ -576,12 +605,29 @@ section {
 
 /* Kontak Section */
 .kontak {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #9333ea 100%);
     color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.kontak::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 40%);
+    pointer-events: none;
 }
 
 .kontak .section-title {
     color: white;
+    position: relative;
+    z-index: 2;
 }
 
 .kontak .section-title::after {
@@ -593,6 +639,8 @@ section {
     grid-template-columns: 1fr 1fr;
     gap: 50px;
     margin-bottom: 50px;
+    position: relative;
+    z-index: 2;
 }
 
 .kontak-info {
@@ -657,6 +705,8 @@ section {
     display: flex;
     justify-content: center;
     gap: 25px;
+    position: relative;
+    z-index: 2;
 }
 
 .social-links a {
