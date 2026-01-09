@@ -16,37 +16,33 @@ if (hamburger) {
     });
 }
 
-// Portfolio Filter
-const filterBtns = document.querySelectorAll('.filter-btn');
-const portfolioItems = document.querySelectorAll('.portfolio-item');
+// File Opening Handler - Open files from dokumen folder
+function openFile(fileName, action = 'view') {
+    const filePath = `dokumen/${fileName}`;
+    
+    if (action === 'download') {
+        // Create a temporary anchor element and trigger download
+        const link = document.createElement('a');
+        link.href = filePath;
+        link.download = fileName;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    } else if (action === 'view') {
+        // Open file in new tab
+        window.open(filePath, '_blank');
+    }
+}
 
-filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        // Remove active class from all buttons
-        filterBtns.forEach(b => b.classList.remove('active'));
-        // Add active class to clicked button
-        btn.classList.add('active');
-
-        const filterValue = btn.getAttribute('data-filter');
-
-        portfolioItems.forEach(item => {
-            const category = item.getAttribute('data-category');
-            
-            if (filterValue === 'all' || filterValue === category) {
-                item.style.display = 'block';
-                setTimeout(() => {
-                    item.style.opacity = '1';
-                    item.style.transform = 'scale(1)';
-                }, 10);
-            } else {
-                item.style.opacity = '0';
-                item.style.transform = 'scale(0.8)';
-                setTimeout(() => {
-                    item.style.display = 'none';
-                }, 300);
-            }
-        });
-    });
+// Attach file handlers to all buttons and links with data-file attribute
+document.addEventListener('click', function(e) {
+    const fileButton = e.target.closest('[data-file]');
+    if (fileButton) {
+        e.preventDefault();
+        const fileName = fileButton.getAttribute('data-file');
+        const action = fileButton.getAttribute('data-action') || 'view';
+        openFile(fileName, action);
+    }
 });
 
 // Smooth Scroll for Navigation Links
