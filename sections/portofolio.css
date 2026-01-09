@@ -8,6 +8,16 @@
     position: relative;
 }
 
+.portofolio .section-title {
+    color: #ffffff;
+    font-weight: 700;
+    background: linear-gradient(135deg, #e9eaee 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: brightness(1.2);
+}
+
 /* Portfolio Content Wrapper */
 .portfolio-content-wrapper {
     display: flex;
