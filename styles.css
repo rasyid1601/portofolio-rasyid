@@ -342,60 +342,6 @@ section {
     color: var(--light-text);
 }
 
-/* Skills Section */
-.keahlian {
-    background: linear-gradient(180deg, white 0%, rgba(248, 250, 252, 0.8) 100%);
-}
-
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-}
-
-.skill-category h3 {
-    font-size: 1.5rem;
-    margin-bottom: 25px;
-    color: var(--primary-color);
-}
-
-.skill-list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.skill-item {
-    display: flex;
-    flex-direction: column;
-}
-
-.skill-item span {
-    font-weight: 600;
-    margin-bottom: 8px;
-    color: var(--text-color);
-}
-
-.skill-bar {
-    height: 8px;
-    background: var(--border-color);
-    border-radius: 4px;
-    overflow: hidden;
-}
-
-.skill-progress {
-    height: 100%;
-    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-    border-radius: 4px;
-    animation: progressBar 1s ease-out;
-}
-
-@keyframes progressBar {
-    from {
-        width: 0 !important;
-    }
-}
-
 /* Portfolio Section */
 .portofolio {
     background: linear-gradient(180deg, rgba(248, 250, 252, 0.8) 0%, rgba(224, 231, 255, 0.6) 100%);
