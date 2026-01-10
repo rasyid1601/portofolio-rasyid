@@ -31,13 +31,20 @@
 
 /* PDF Container */
 .portfolio-pdf-container {
-    background: linear-gradient(135deg, #e4e4e9 0%, #3e3e3f 50%, #161616 100%);
+    background: rgba(255,255,255, 0.12);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     padding: 60px 40px;
     border-radius: 15px;
-    box-shadow: var(--shadow);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    border: 1px solid rgba(255,255,255,0.18);
     text-align: center;
     max-width: 500px;
     animation: fadeInUp 0.8s ease;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
 }
 
 .pdf-icon {
@@ -67,10 +74,23 @@
 }
 
 .portfolio-pdf-container .btn {
-    display: inline-block;
-    width: 100%;
-    text-align: center;
-    margin-bottom: 15px;
+    background: linear-gradient(135deg, #2dd4ff, #3b82f6);
+    border: none;
+    border-radius: 50px;
+    padding: 12px 30px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-download:hover {
+    background: linear-gradient(135deg, #3b82f6, #2dd4ff);
+    box-shadow: 0 8px 20px rgba(45, 212, 255, 0.4);
+}
+
+.btn-download:active {
+    transform: scale(0.95);
 }
 
 /* Mobile Responsive */
